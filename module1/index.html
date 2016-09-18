@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coursera Single Page Web App with AngularJS</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+
+</head>
+<body ng-app="LunchCheck">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">ACE - Coursera</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../index.html">Home </a></li>
+          <li class="active"><a href="#">Module 1 <span class="sr-only">(current)</span></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="container" ng-controller="LunchCheckController">
+    <div class="row">
+      <div class="xs-col-12">
+        <h1>Module 1 Assignment</h1>
+
+        <p>Please, enter the list of items you want to eat: </p>
+        <form>
+          <div ng-class="{'form-group': true, 'has-success': totalItems, 'has-error': noItems()}">
+            <label class="control-label" for="exampleInputEmail1">Items</label>
+            <input class="form-control" type="text" id="items" placeholder="Items..." ng-model="items">
+            <span class="help-block">
+              Enter the items separated by a comma (eg. 1, 2, 3). Empty items (, ,) will not be
+              taked into account.
+            </span>
+          </div>
+          <div ng-class="{'alert': true, 'alert-info': noItems(), 'alert-success': notTooMuch(), 'alert-danger': tooMuch()}">
+            {{message}}
+          </div>
+          <button type="button" class="btn btn-primary" ng-click="checkItems()">Check If Too Much</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <p class="text-center">
+        Alberto Contreras Espínola - Spain - September 2016
+      </p>
+    </div>  
+  </footer>
+
+  <script src="../js/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
