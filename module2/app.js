@@ -46,11 +46,11 @@
         quantity: 4
       },
       {
-        name: 'Fruits',
+        name: 'Oranges',
         quantity: 12
       },
       {
-        name: 'Vegetables',
+        name: 'Apples',
         quantity: 10
       }
     ];
@@ -67,9 +67,6 @@
     service.buyItem = function (itemIndex) {
       boughtItems.push(toBuyItems[itemIndex]);
       toBuyItems.splice(itemIndex, 1);
-
-      console.log('To buy items: ', toBuyItems);
-      console.log('Bought items: ', boughtItems);
     }
   }
 })();
