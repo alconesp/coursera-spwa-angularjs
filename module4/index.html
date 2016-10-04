@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coursera Single Page Web App with AngularJS - Narrow Down Your Menu Choice</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+
+</head>
+<body ng-app="MenuApp">
+<div id="wrap">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">ACE - Coursera</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="../index.html">Home </a></li>
+          <li><a href="../module1/index.html">Module 1 </a></li>
+          <li><a href="../module2/index.html">Module 2 </a></li>
+          <li><a href="../module3/index.html">Module 3 </a></li>
+          <li class="active"><a href="#">Module 4 <span class="sr-only">(current)</span></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="container" ng-controller="MenuAppController as menu" id="main">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Chinese Menu</h1>
+      
+      </div>
+    </div>
+    
+  </div>
+</div>
+  <footer class="footer">
+    <div class="container">
+      <p class="text-center">
+        Alberto Contreras Espínola - Spain - September 2016
+      </p>
+    </div>  
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../js/angular.min.js"></script>
+  <script src="../js/angular-ui-router.min.js"></script>
+  <script src="src/data.module.js"></script>
+  <script src="src/menuapp.module.js"></script>
+  <script src="src/menuapp.controller.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
