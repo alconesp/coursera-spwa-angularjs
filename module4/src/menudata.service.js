@@ -3,8 +3,11 @@
 
   angular.module('data').service('MenuDataService', MenuDataService);
 
-  function MenuDataService(){
+  MenuDataService.$inject = ['$http']
+  function MenuDataService($http){
     var service = this;
+
+    console.log('MenuDataService');
 
     service.getAllCategories = function(){
       return $http({

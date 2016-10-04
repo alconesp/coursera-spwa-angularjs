@@ -19,23 +19,23 @@
         templateUrl: 'src/categories.template.html',
         controller: 'CategoriesController as categories',
         resolve: {
-          categoriesItems: ['DataMenuService', function(DataMenuService) {
-            return DataMenuService.getItemsForCategory(categoryShortName);
+          categoriesItems: ['MenuDataService', function(MenuDataService) {
+            return MenuDataService.getAllCategories();
           }]  
         }
       })
-/*
-      .state('categories', {
+
+      .state('category-detail', {
         url: '/categories/{categoryShortName}',
         templateUrl: 'src/category-items.template.html',
         controller: 'ItemsController as items',
         resolve: {
-          categoriesItems: { ['DataMenuService', function(DataMenuService) {
-            return DataMenuService.getItemsForCategory(categoryShortName);
+          categoryItems: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
+            return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
           }]
         }
       })
-*/
+
       ;
   }
 })();
