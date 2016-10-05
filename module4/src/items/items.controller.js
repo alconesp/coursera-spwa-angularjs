@@ -8,7 +8,5 @@
     var itemsCtrl = this;
 
     itemsCtrl.categoryItems = categoryItems.data.menu_items;
-    console.log('Categories: ', itemsCtrl
-      .categoryItems );
   }
 })()

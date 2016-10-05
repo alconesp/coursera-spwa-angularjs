@@ -30,8 +30,7 @@
         templateUrl: 'src/items/category-items.template.html',
         controller: 'ItemsController as itemsCtrl',
         resolve: {
-          categoryItems: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
-            console.log('StateParams', $stateParams);
+          categoryItems: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) { 
             return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
           }]
         }
