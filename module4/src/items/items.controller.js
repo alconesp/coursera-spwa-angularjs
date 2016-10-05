@@ -5,9 +5,10 @@
 
   ItemsController.$inject = ['categoryItems'];
   function ItemsController(categoryItems) {
-    var items = this;
+    var itemsCtrl = this;
 
-    items.categoryItems = categoryItems.data;
-    console.log('Categories: ', items.categoryItems );
+    itemsCtrl.categoryItems = categoryItems.data.menu_items;
+    console.log('Categories: ', itemsCtrl
+      .categoryItems );
   }
 })()

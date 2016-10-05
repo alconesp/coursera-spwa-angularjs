@@ -11,13 +11,13 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'src/home.template.html'
+        templateUrl: 'src/menuapp/home.template.html'
       })
 
       .state('categories', {
         url: '/categories',
-        templateUrl: 'src/categories.template.html',
-        controller: 'CategoriesController as categories',
+        templateUrl: 'src/categories/categories.template.html',
+        controller: 'CategoriesController as catCtrl',
         resolve: {
           categoriesItems: ['MenuDataService', function(MenuDataService) {
             return MenuDataService.getAllCategories();
@@ -27,10 +27,11 @@
 
       .state('category-detail', {
         url: '/categories/{categoryShortName}',
-        templateUrl: 'src/category-items.template.html',
-        controller: 'ItemsController as items',
+        templateUrl: 'src/items/category-items.template.html',
+        controller: 'ItemsController as itemsCtrl',
         resolve: {
           categoryItems: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
+            console.log('StateParams', $stateParams);
             return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
           }]
         }
