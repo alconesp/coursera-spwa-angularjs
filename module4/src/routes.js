@@ -26,7 +26,7 @@
       })
 
       .state('categories.category-detail', {
-        url: '/categories/{categoryShortName}',
+        url: '/items/{categoryShortName}',
         templateUrl: 'src/items/category-items.template.html',
         controller: 'ItemsController as itemsCtrl',
         resolve: {
