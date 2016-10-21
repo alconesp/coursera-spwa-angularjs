@@ -17,7 +17,7 @@ function SignUpController($http, ProfileService) {
 
   $ctrl.getFavoriteDish = function () {
     console.log('getFavoriteDish');
-    $http.get('http://alconesp-chinese-food.herokuapp.com/menu_items/' + $ctrl.favoriteDishNumber + '.json')
+    $http.get('https://alconesp-chinese-food.herokuapp.com/menu_items/' + $ctrl.favoriteDishNumber + '.json')
     .then(function (response) {
       if ( response.data.error != undefined  ) {
         $ctrl.favoriteDishError = true;
